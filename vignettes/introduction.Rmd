@@ -1,0 +1,48 @@
+---
+title: "Introduction au package jameson.saussereau.m1ecap"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Introduction au package jameson.saussereau.m1ecap}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(jameson.saussereau.m1ecap)
+```
+
+## Presentation du jeu de donnees
+
+Le package contient un jeu de donnees de transactions de vente au detail
+issues du dataset Online Retail (decembre 2010).
+
+```{r}
+head(retail)
+```
+
+## Filtrer par pays
+
+La fonction `filtrer_pays()` permet de filtrer les transactions pour un pays.
+
+```{r}
+france <- filtrer_pays(retail, "France")
+head(france)
+```
+
+## Calcul groupe
+
+La fonction `calcul_groupe()` calcule le chiffre d'affaires moyen par groupe.
+
+```{r}
+ca_pays <- calcul_groupe(retail, "Country")
+head(ca_pays)
+```
+
+## Visualisation
+
+La fonction `graphique_ca()` affiche un graphique des CA moyens.
+
+```{r}
+graphique_ca(ca_pays, n = 10)
+```
