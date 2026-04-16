@@ -20,11 +20,12 @@ devtools::install_local("jameson.saussereau.m1ecap")
 ```bash
 git checkout master
 git commit -m "commit A"
-git checkout -b feature
+git checkout -b branch1
 git commit -m "commit B"
 git checkout master
-git merge feature
 git commit -m "commit C"
+git merge branch1
+git commit -m "commit D"
 ```
 
-Le premier commit de ce repertoire a été effectué le 16/04/2025 à XXhXX
+Le premier commit de ce repertoire a été effectué le 16/04/2025 à 09h54
